@@ -5,15 +5,16 @@ class Solution {
         int zeros = 0, maxLen = 0;
         while (r < n) {
             if(nums[r] == 0) zeros++;
-            while (zeros > k) {
+            if (zeros > k) {
                 if (nums[l] == 0) {
                     zeros--; 
                 }
                 l++;
             }
+            if(zeros <= k){
                 int len = r - l + 1;
                 maxLen = Math.max(maxLen, len);
-            
+            }
             r++;  
         }
         return maxLen; 

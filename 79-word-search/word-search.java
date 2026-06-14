@@ -6,10 +6,12 @@
         int n2=board[0].length;
         for(int i=0;i<n1;i++){
             for (int j=0;j<n2;j++){
+                if(board[i][j]==word.charAt(0)){
                  if (helper( board,word,n,i,j,0,n1,n2)){
                     return true;
                  }          //start from every index
                 }
+            }
             }
             return false;
         }
